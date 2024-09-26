@@ -18,11 +18,15 @@ function App() {
   const [cartProductCount, setCartProductCount] = useState(0)
 
   const fetchUserDetails = async () => {
+    
     try {
       const dataResponse = await axios(SummaryAPI.current_user.url, {
         method: SummaryAPI.current_user.method,
         withCredentials: true,
       });
+      console.log("new",dataResponse)
+      
+      
   
       const dataApi = dataResponse.data
   
