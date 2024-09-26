@@ -1,10 +1,9 @@
 async function userLogout(req, res) {
     try {
-        // Clear the cookie, ensuring the same options as when setting it
         res.clearCookie('token', {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
-            sameSite: 'None', // Cross-origin cookie sharing
+            secure: process.env.NODE_ENV === 'production', 
+            sameSite: 'None', 
         });
 
         res.json({

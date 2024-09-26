@@ -33,11 +33,10 @@ async function userSignInController(req, res) {
             };
             const token = jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY, { expiresIn: '8h' });
 
-            // Cookie options with conditional security for production
             const tokenOption = {
                 httpOnly: true,
-                secure: process.env.NODE_ENV === 'production', // Only secure in production
-                sameSite: 'None', // Allows cross-origin cookies
+                secure: process.env.NODE_ENV === 'production', 
+                sameSite: 'None', 
             };
 
             // Send cookie and response
