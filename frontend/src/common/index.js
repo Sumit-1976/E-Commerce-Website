@@ -1,4 +1,4 @@
-const backendDomain = "http://localhost:8080"
+const backendDomain = "https://urbancart-backend.vercel.app"
 
 const SummaryAPI = {
     signUp : {
