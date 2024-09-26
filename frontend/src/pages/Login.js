@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import loginIcons from '../assets/login.png';
 import {FaEye} from 'react-icons/fa';
 import {FaEyeSlash} from 'react-icons/fa'
 import {Link, useNavigate} from 'react-router-dom'
 import SummaryAPI from '../common';
 import {toast} from 'react-toastify'
+import Context from '../context';
 
 const Login = () => {
   
@@ -15,6 +16,8 @@ const Login = () => {
   })
 
   const navigate = useNavigate()
+
+  const {fetchUserDetails,fetchUserAddToCart} = useContext(Context)
 
   const handleOnChange = (e) =>{
     const { name, value} = e.target
@@ -44,6 +47,8 @@ const Login = () => {
     if(dataApi.success){
       toast.success(dataApi.message)
       navigate('/')
+      fetchUserDetails()
+      fetchUserAddToCart()
     }
 
     if(dataApi.error){

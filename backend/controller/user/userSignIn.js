@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const userModel = require('../models/userModel');
+const userModel = require('../../models/userModel');
 const jwt = require('jsonwebtoken')
 
 async function userSignInController(req, res) {
@@ -45,7 +45,7 @@ async function userSignInController(req, res) {
 
     } catch (error) {
         res.status(500).json({
-            message: error.message || 'An error occurred during sign in',
+            message: error.message || error,
             error: true,
             success: false,
         });

@@ -69,7 +69,7 @@ const SignUp = () => {
       }
 
     } else {
-      console.log("Please check password and confirm password!")
+      toast.error("Password and Confirm Password doesn't match!")
     }
 
     

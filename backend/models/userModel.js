@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
         required : true
     },
     password : String,
-    profilePic : String,
+    profilePic : {
+        type: String,
+        default: "path/to/default-profile-pic.jpg"
+    },
+    role : String,
 },{
     timestamps : true
 })
